@@ -1,0 +1,19 @@
+extends includes/layout.pug
+block variables
+  - page_title = 'HOME'
+  - page_class = 'top'
+  - 
+    var page_metatags = [
+      {name: 'description', content: 'Top Page'}, 
+    ]
+
+block content
+  section.top__hero 
+    h1 jill and ger
+  section.top__ceremony
+  section.top__reception
+  section.top__dcode
+  section.top__gifts
+  
+block customize_script
+  script(src="js/top/index.js")
