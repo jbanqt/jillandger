@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "PP Editorial Old";
+  src:
+    local("PP Editorial Old"),
+    url("/public/fonts/PPEditorialOld-Ultralight.otf") format("opentype");
+}
+
 $vibur: 'Vibur', cursive;
 $titillium: 'Titillium Web', sans-serif;
 $single: 'Single Day', cursive;
+$pped: 'PP Editorial Old';

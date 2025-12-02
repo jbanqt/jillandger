@@ -1,0 +1,9 @@
+@use 'tools/mixin' as mx;
+
+.section {
+  &__container {
+    height: 100vh;
+    height: 100svh;
+    @include mx.max-width;
+  }
+}

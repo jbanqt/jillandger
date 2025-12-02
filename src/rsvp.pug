@@ -1,13 +1,16 @@
 extends includes/layout.pug
 block variables
   - var page_title = 'RSVP'
+  - page_class = 'rsvp'
   - 
     var page_metatags = [
       {name: 'description', content: 'RSVP Page'}, 
     ]
 
 block content
-  | aaaasdasd
+  section.rsvp__main 
+    .rsvp__main-form 
+      
 
 block customize_script
   script(src="js/lower/index.js")

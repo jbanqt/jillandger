@@ -8,12 +8,15 @@ block variables
     ]
 
 block content
-  section.top__hero 
-    h1 jill and ger
-  section.top__ceremony
-  section.top__reception
-  section.top__dcode
-  section.top__gifts
+  section.section__container.top__hero 
+    .top__hero-ctr 
+      h1.top__hero-heading Jill & Ger
+      .top__hero-content 
+        img.image(src="/public/images/top/hero-image.jpg", alt="Jill & Ger")
+  section.section__container.top__ceremony
+  section.section__container.top__reception
+  section.section__container.top__dcode
+  section.section__container.top__gifts
   
 block customize_script
   script(src="js/top/index.js")
