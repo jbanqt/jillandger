@@ -1,0 +1,82 @@
+@use 'settings/color' as color;
+@use 'settings/font-family' as ff;
+@use 'settings/font-weight' as fw;
+@use 'tools/mixin' as mx;
+@use 'tools/function' as fn;
+@use 'tools/media-queries' as mq;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+
+  &__wrapper  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 72px 60px 67px;
+    gap: 250px;
+    @include mq.max(1024px) {
+      gap: 50px;
+    }
+  }
+
+  &__main {
+    max-width: 712px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    @include mq.max(1024px) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__main-logo-image {
+    max-width: 85px;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__main-info  {
+    display: flex;
+    align-items: center;
+    gap: 85px;
+  }
+
+  &__main-info-text {
+    position: relative;
+    font-size: 2.2rem;
+    font-weight: fw.$medium;
+    font-family: ff.$vibur;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        width: 51px;
+        height: 1px;
+        background-color: color.$black;
+        position: absolute;
+        right: -67px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__rsvp-btn {
+    font-size: 2.4rem;
+    font-weight: fw.$medium;
+    font-family: ff.$vibur;
+    letter-spacing: -0.02em;
+    color: color.$white;
+    text-transform: uppercase;
+    background-color: color.$black;
+    border-radius: 40px;
+    padding: 4px 12px 0;
+  }
+}

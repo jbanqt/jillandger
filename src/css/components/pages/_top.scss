@@ -1,0 +1,34 @@
+@use 'settings/color' as color;
+@use 'settings/font-family' as ff;
+@use 'settings/font-weight' as fw;
+@use 'tools/mixin' as mx;
+@use 'tools/function' as fn;
+@use 'tools/media-queries' as mq;
+
+.top {
+  &__hero {
+    display: flex;
+    align-items: center;
+  }
+
+  &__hero-ctr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 107px;
+    padding: 0 77px 0 72px;
+  }
+
+  &__hero-heading {
+    font-size: 23.8rem;
+    font-weight: fw.$regular;
+    font-family: ff.$pped;
+    letter-spacing: -0.03em;
+    color: color.$eggplant;
+  }
+
+  &__hero-content {
+    max-width: 39.4%; //1492
+    aspect-ratio: 588 / 748;
+  }
+}

@@ -5,8 +5,12 @@
 // Components
 // // Common
 @use 'components/common/image.scss';
+@use 'components/common/header';
+@use 'components/common/section';
 
 // // Page
+@use 'components/pages/top';
+@use 'components/pages/rsvp';
 
 // Trumps
 @use 'trumps/helper';
