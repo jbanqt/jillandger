@@ -28,7 +28,7 @@ jobs:
 
       # 4. Install project dependencies
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable=false
 
       # 5. Build the static site
       - name: Build site
