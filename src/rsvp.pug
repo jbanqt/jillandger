@@ -4,7 +4,13 @@ block variables
   - page_class = 'rsvp'
   - 
     var page_metatags = [
-      {name: 'description', content: 'RSVP Page'}, 
+      {name: 'description', content: 'Jill and Ger wedding site.'},
+    ]
+  -
+    var og_metatags = [
+      {property: 'og:title', content: 'RSVP | Jill and Ger'}, 
+      {property: 'og:description', content: 'Jill and Ger wedding site.'}, 
+      {property: 'og:image', content: '/public/images/rsvp/ogp.jpg'}
     ]
 
 block content
@@ -26,7 +32,7 @@ block content
             span the
             span date
           span.rsvp__main-ct-loc.block Saint Pio of Pietrelcina #[br.sp]Parish, Antipolo City
-        button.rsvp__main-ct-link.js-rsvp-btn( type="button" data-tf-popup="YuAtIzUS" data-tf-width="80vw" data-tf-height="90vh") RSVP
+        button.rsvp__main-ct-link.js-rsvp-btn(type="button" data-tf-popup="YuAtIzUS" data-tf-width="80vw" data-tf-height="90vh") RSVP
 
 block customize_script
   script(src="//embed.typeform.com/next/embed.js")
