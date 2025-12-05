@@ -9,35 +9,39 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      # 1. Checkout repo
+      # 1. Checkout repository
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2. Setup Node.js
+      # 2. Setup Node.js with Yarn
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
+          cache: 'yarn'   # caches yarn dependencies for faster builds
 
-      # 3. Install dependencies
+      # 3. Install system dependencies (required for some packages like node-sass)
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y build-essential python3
+
+      # 4. Install project dependencies
       - name: Install dependencies
         run: yarn install
 
-      # 4. Build static site
+      # 5. Build the static site
       - name: Build site
-        run: yarn gulp build --smap=false
+        run: yarn build
 
-      # 5. Add redirect for root → /rsvp/
+      # 6. Add root redirect / → /rsvp/
       - name: Add root redirect
         run: |
           echo "/ /rsvp/ 302" > dist/_redirects
 
-      # 6. Deploy to Cloudflare Pages
+      # 7. Deploy to Cloudflare Pages
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: jillandger
-          directory: dist
+          acc
