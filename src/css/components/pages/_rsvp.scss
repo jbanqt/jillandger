@@ -1,8 +1,213 @@
+@use 'settings/color' as color;
+@use 'settings/font-family' as ff;
+@use 'settings/font-weight' as fw;
+@use 'tools/mixin' as mx;
+@use 'tools/function' as fn;
+@use 'tools/media-queries' as mq;
+
 .rsvp {
+  background-color: color.$floral-white;
+
   &__main {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  &__main-ctr {
+    position: relative;
     height: 100vh;
     height: 100svh;
     max-height: 100vh;
-    max-height: 100svh;
+    padding: 0 150px 0 63px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+    @include mq.tablet {
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      padding: 58px 4.5% 47px;
+    }
   }
+
+  &__main-image {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    @include mq.tablet {
+      max-width: 760px;
+      width: 100%;
+      height: auto;
+    }
+    @include mq.sp {
+      max-width: 400px;
+    }
+  }
+
+  &__main-image-ct {
+    position: relative;
+    width: fit-content;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  &__main-head-ct {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 23.9%;
+    left: 100px;
+    @include mq.minmax(1367px, 1920px) {
+      left: fn.getfluidcustom(35, 100, 1367, 1920);
+    }
+    @include mq.max(1366px) {
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include mq.sp {
+      display: none;
+    }
+  }
+
+  &__main-heading,
+  &__main-date {
+    display: block;
+    font-size: 4.7rem;
+    font-weight: fw.$medium;
+    font-family: ff.$vibur;
+    color: color.$eggplant;
+    line-height: 1.3em;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__main-ct {
+    width: 40%;
+    @include mq.tablet {
+      width: 100%;
+    }
+  }
+
+  &__main-ct-info {
+    text-align: center;
+  }
+
+  &__main-ct-date {
+    display: block;
+    font-size: 5.8rem;
+    font-family: ff.$vibur;
+    font-weight: fw.$medium;
+    letter-spacing: -0.02em;
+    color: color.$eggplant;
+    margin-bottom: 28px;
+    @include mq.tablet {
+      display: none;
+    }
+    @include mq.sp {
+      display: block;
+      font-size: 35px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__main-ct-title {
+    font-size: 27.6rem;
+    font-family: ff.$vividly;
+    font-weight: fw.$regular;
+    color: color.$eggplant;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: fn.getem(276, 159);
+    @include mq.minmax(1367px, 1500px) {
+      font-size: fn.getfluidcustom(226, 276, 1367, 1500);
+    }
+
+    & > span {
+      display: block;
+
+      &:last-child {
+        transform: rotate(-2.17deg);
+      }
+    }
+  }
+
+  &__main-ct-loc {
+    font-size: 2.1em;
+    font-family: ff.$kite;
+    letter-spacing: -0.03em;
+    color: color.$eggplant;
+    margin-top: 18px;
+    text-align: center;
+    @include mq.tablet {
+      font-size: 16px;
+      margin-top: 0;
+    }
+  }
+
+  &__main-ct-link {
+    display: block;
+    width: 297px;
+    margin: 46px auto 0;
+    padding: 10px 10px 16px;
+    border-radius: 78px;
+    background-color: #5f88c7;
+    overflow: hidden;
+    font-size: 4rem;
+    font-family: ff.$youtube;
+    font-weight: fw.$medium;
+    letter-spacing: -0.02em;
+    color: color.$floral-white;
+    text-align: center;
+    transition: 0.3s ease;
+    border: none;
+    cursor: pointer;
+    @include mq.tablet {
+      width: 158px;
+      margin-top: 24px;
+      padding: 3px 10px 9px;
+      font-size: 26px;
+    }
+    @include mq.sp {
+      width: 179px;
+      padding: 9px 10px 13px;
+      font-size: 30px;
+      margin-top: 26px;
+    }
+
+    &:hover {
+      background-color: #e97db8;
+    }
+  }
+
+  // &__modal {
+  //   width: 100%;
+  //   height: 100%;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   @include mx.center;
+
+  //   &::before {
+  //     content: '';
+  //     width: 100%;
+  //     height: 100%;
+  //     background-color: rgba($color: #000000, $alpha: 50%);
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //   }
+  // }
+
+  // &__modal-ct {
+  //   height: 80vh;
+  //   width: 80%;
+  //   background-color: color.$white;
+  //   border-radius: 80px;
+  //   overflow: hidden;
+  // }
 }

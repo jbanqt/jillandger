@@ -11,9 +11,41 @@
   }
 }
 
+.pc-tablet {
+  display: block;
+  @include mq.max(1366px) {
+    display: none;
+  }
+}
+
+.tablet {
+  display: none;
+  @include mq.minmax(768px, 1366px) {
+    display: block;
+  }
+}
+
+.tablet-up {
+  display: block;
+  @include mq.tablet {
+    display: none;
+  }
+}
+
+.tablet-down {
+  display: none;
+  @include mq.tablet {
+    display: block;
+  }
+}
+
 .sp {
   display: none;
   @include mq.sp {
     display: block;
   }
+}
+
+.block {
+  display: block;
 }

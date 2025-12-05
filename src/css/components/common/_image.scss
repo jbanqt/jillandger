@@ -15,4 +15,8 @@
   &--contain {
     object-fit: contain;
   }
+
+  &--center-right {
+    object-position: center right;
+  }
 }
