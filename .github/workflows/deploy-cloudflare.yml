@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'yarn'   # caches yarn dependencies for faster builds
+          cache: 'yarn'
 
       # 3. Install system dependencies (required for some packages like node-sass)
       - name: Install system dependencies
@@ -44,4 +44,6 @@ jobs:
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          acc
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: jillandger
+          directory: dist
