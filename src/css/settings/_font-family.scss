@@ -1,11 +1,28 @@
 @font-face {
-  font-family: "PP Editorial Old";
+  font-family: 'PP Editorial Old';
   src:
-    local("PP Editorial Old"),
-    url("/public/fonts/PPEditorialOld-Ultralight.otf") format("opentype");
+    local('PP Editorial Old'),
+    url('/public/fonts/PPEditorialOld-Ultralight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Vividly Regular';
+  src:
+    local('Vividly'),
+    url('/public/fonts/Vividly-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Youtube;
+  src:
+    local('Youtube'),
+    url('/public/fonts/YouTubeSansRegular.otf') format('opentype');
 }
 
 $vibur: 'Vibur', cursive;
 $titillium: 'Titillium Web', sans-serif;
 $single: 'Single Day', cursive;
 $pped: 'PP Editorial Old';
+$vividly: 'Vividly Regular';
+$kite: 'Kite One', sans-serif;
+$youtube: 'Youtube';

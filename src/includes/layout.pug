@@ -21,7 +21,8 @@ html(lang="en")
       each item in page_metatags
         meta(name=item['name'], content=item['content'])
     meta(name="og:type", content="website")
-    
+    link(rel="icon" type="image/x-icon" href="/public/images/common/favicon.png")
+
     title=title
     //- --END-- metatags //
 
@@ -30,8 +31,8 @@ html(lang="en")
     //- --START-- Stylesheets CDNs //
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Single+Day&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Vibur&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Kite+One&family=Single+Day&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Vibur&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//embed.typeform.com/next/css/popup.css" />
     link(rel="stylesheet", href="css/main.css")
 
     block customize_css
@@ -42,7 +43,8 @@ html(lang="en")
       block before_header
 
       //- Include global header based files here
-      include header.pug
+      if page_class == 'top'
+        include header.pug
       //- After the header content
       block after_header
 
@@ -74,7 +76,6 @@ html(lang="en")
     //- --END-- Scripts //
 
     //- --START-- Default scripts
-    script(src="js/common/index.js", defer)
     block customize_script
     //- --END-- Default scripts
 
