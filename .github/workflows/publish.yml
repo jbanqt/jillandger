@@ -19,5 +19,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 91b1403d1292d56d83748c1c4649dfb2
           projectName: jillandger
-          directory: /dist
+          directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
